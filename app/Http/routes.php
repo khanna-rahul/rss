@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('feed', 'FeedController@index');
+
 Route::get('/', function () {
     return view('welcome');
 });
