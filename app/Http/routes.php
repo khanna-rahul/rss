@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('feed', 'FeedController@index');
+Route::get('feed', 'FeedController@fetch');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+Route::get('deleteUrl', 'FeedController@deleteUrl');
+Route::get('/', 'FeedController@index');
+Route::post('/', 'FeedController@postIndex');
